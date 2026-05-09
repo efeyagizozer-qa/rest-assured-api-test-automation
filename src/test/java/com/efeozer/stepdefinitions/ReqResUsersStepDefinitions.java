@@ -17,6 +17,9 @@ public class ReqResUsersStepDefinitions {
         response = RestAssured
                 .given()
                 .baseUri(ConfigurationReader.getProperty("base_url"))
+                .header("x-api-key",
+                        ConfigurationReader.getProperty("api_key"))
+                .queryParam("page", 2)
                 .when()
                 .get(endpoint);
     }
