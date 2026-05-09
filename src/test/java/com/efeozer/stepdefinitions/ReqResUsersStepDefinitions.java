@@ -1,3 +1,5 @@
+package com.efeozer.stepdefinitions;
+
 import com.efeozer.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
