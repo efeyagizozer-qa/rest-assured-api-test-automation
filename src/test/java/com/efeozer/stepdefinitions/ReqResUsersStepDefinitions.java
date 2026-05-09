@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ReqResUsersStepDefinitions {
 
@@ -29,5 +30,12 @@ public class ReqResUsersStepDefinitions {
         int actualStatusCode = response.statusCode();
         Assert.assertEquals(expectedStatusCode, actualStatusCode);
 
+    }
+
+    @Then("page number should be {int}")
+    public void pageNumberShouldBe(int expectedPageNumber) {
+
+        response.then()
+                .body("page", equalTo(expectedPageNumber));
     }
 }

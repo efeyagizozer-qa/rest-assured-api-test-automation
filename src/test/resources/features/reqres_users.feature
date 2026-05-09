@@ -4,3 +4,4 @@ Feature: ReqRes Users API
 
     Given user sends GET request to "/api/users"
     Then status code should be 200
+    And page number should be 2
